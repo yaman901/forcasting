@@ -1,0 +1,209 @@
+﻿{
+  "Scenario": "Forecasting",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "C:\\Users\\asus\\Downloads\\Books\\Must read\\EURUSD_historical_data.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Date",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Open",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "High",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Low",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Close",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Change(Pips)",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Change(%)",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 0.051412943867390114,
+        "RuntimeInSeconds": 0.028,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 26,
+            "SeriesLength": 418,
+            "TrainSize": 703,
+            "Horizon": 5,
+            "OutputColumnName": "Change(%)",
+            "InputColumnName": "Change(%)",
+            "ConfidenceLowerBoundColumn": "Change(%)_LB",
+            "ConfidenceUpperBoundColumn": "Change(%)_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 0.051412943867390114,
+        "RuntimeInSeconds": 0.039,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 26,
+            "SeriesLength": 28,
+            "TrainSize": 703,
+            "Horizon": 5,
+            "OutputColumnName": "Change(%)",
+            "InputColumnName": "Change(%)",
+            "ConfidenceLowerBoundColumn": "Change(%)_LB",
+            "ConfidenceUpperBoundColumn": "Change(%)_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 0.051412943867390114,
+        "RuntimeInSeconds": 0.027,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 26,
+            "SeriesLength": 194,
+            "TrainSize": 703,
+            "Horizon": 5,
+            "OutputColumnName": "Change(%)",
+            "InputColumnName": "Change(%)",
+            "ConfidenceLowerBoundColumn": "Change(%)_LB",
+            "ConfidenceUpperBoundColumn": "Change(%)_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 0.051412943867390114,
+        "RuntimeInSeconds": 0.033,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 26,
+            "SeriesLength": 198,
+            "TrainSize": 703,
+            "Horizon": 5,
+            "OutputColumnName": "Change(%)",
+            "InputColumnName": "Change(%)",
+            "ConfidenceLowerBoundColumn": "Change(%)_LB",
+            "ConfidenceUpperBoundColumn": "Change(%)_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 0.051412943867390114,
+        "RuntimeInSeconds": 0.03,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 26,
+            "SeriesLength": 105,
+            "TrainSize": 703,
+            "Horizon": 5,
+            "OutputColumnName": "Change(%)",
+            "InputColumnName": "Change(%)",
+            "ConfidenceLowerBoundColumn": "Change(%)_LB",
+            "ConfidenceUpperBoundColumn": "Change(%)_UB"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ForecastBySsa"
+    },
+    "Schema": "e0",
+    "MetricName": "RMSE",
+    "ModelFilePath": "D:\\forcasting\\forcasting\\MLModel1.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 3,
+    "OptimizeMetric": "RMSE",
+    "Subsampling": false,
+    "Type": "ForecastingTrainingOption",
+    "TrainingTime": 100,
+    "UseCrossValidation": false,
+    "Horizon": 5,
+    "TimeColumn": "Date",
+    "LabelColumn": "Change(%)",
+    "UseDefaultIndex": false,
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "CrossValidationValidationOption",
+      "NumberOfFolds": 5
+    }
+  }
+}
